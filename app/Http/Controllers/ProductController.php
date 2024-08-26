@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 
 use App\Models\Product;
+use App\Models\Brand;
+
 
 
 use Illuminate\Http\Request;
@@ -21,8 +23,9 @@ class ProductController extends Controller
     public function form()
     {
         $allCategory=Category::all();
+        $allBrand=Brand::all();
 
-        return view('backend.productform',compact('allCategory'));
+        return view('backend.productform',compact('allCategory','allBrand'));
     }
     public function store(Request $request)
     {
@@ -32,7 +35,8 @@ class ProductController extends Controller
             'product_description'=>'required',
             'product_quantity'=>'required',
             'product_image'=>'required|file|max:1024',
-            'category_id'=>'required'
+            'category_id'=>'required',
+            'brand_id'=>'required'
 
             
         ]);
@@ -68,7 +72,8 @@ class ProductController extends Controller
         'description'=>$request->product_description,
         'quantity'=>$request->product_quantity,
         'image'=>$fileName,
-        'category_id'=>$request->category_id
+        'category_id'=>$request->category_id,
+        'brand_id'=>$request->brand_id
 
 
 

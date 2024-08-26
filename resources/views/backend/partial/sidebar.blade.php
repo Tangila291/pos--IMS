@@ -23,19 +23,25 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{route('Sale.list')}}">
                 <svg class="bi"><use xlink:href="#people"/></svg>
                 Sale
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{route('Order.list')}}">
+                <svg class="bi"><use xlink:href="#people"/></svg>
+                Order List
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{route('Stock')}}">
                 <svg class="bi"><use xlink:href="#people"/></svg>
                 Stock
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{route('Customer.list')}}">
                 <svg class="bi"><use xlink:href="#people"/></svg>
                 Customer
               </a>
@@ -53,13 +59,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{route('Report')}}">
                 <svg class="bi"><use xlink:href="#graph-up"/></svg>
                 Reports
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{route('Brand')}}">
                 <svg class="bi"><use xlink:href="#people"/></svg>
                 Brand
               </a>

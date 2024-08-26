@@ -224,7 +224,7 @@
 
 
 
-<div class="container-fluid">
+<div class="" style="width:100%;"> 
   <div class="row">
     <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
       <div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
@@ -237,10 +237,11 @@
       </div>
 
 
-      <main class="col-md-9 ms-sm-auto col-leg-10 px-md-4">
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
   
 @yield('content')
+      </main>
 
 <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

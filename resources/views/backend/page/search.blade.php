@@ -1,8 +1,5 @@
 @extends('backend.admin')
-
 @section('content')
-<h1>Products</h1>
-<a class="btn btn-success" href="{{route('Product.form')}}">Create new product</a>
 
 <table class="table">
   <thead>
@@ -15,8 +12,6 @@
       <th scope="col">Description</th>
       <th scope="col">Quantity</th>
       <th scope="col">Category Name</th>
-      <th scope="col">Brand Name</th>
-
 
       <th scope="col">Action</th>
 
@@ -35,8 +30,6 @@
       <td>{{$product->description}}</td>
       <td>{{$product->quantity}}</td>
       <td>{{$product->category->name}}</td>
-      <td>{{$product->brand->name}}</td>
-
 
 
 
@@ -56,11 +49,13 @@
 </table>
 
 
-{{ $allProduct->links() }}
-
 
 
 
 
 
 @endsection
+
+
+
+

@@ -18,7 +18,17 @@
     <option value="{{$category->id}}">{{$category->name}}</option>
     @endforeach
      
-      
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="xyz">Select Brand Name:</label>
+    <select name="brand_id" class="form-select" aria-label="Default select example">
+
+    @foreach ($allBrand as $brand)
+    <option value="{{$brand->id}}">{{$brand->name}}</option>
+    @endforeach
+     
     </select>
   </div>
 
