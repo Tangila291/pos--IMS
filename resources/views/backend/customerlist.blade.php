@@ -3,7 +3,6 @@
 @section('content')
 
 <h1>Customer List</h1>
-<a class="btn btn-primary" href="{{route('Customer.form')}}">Create Customer</a>
 
 <table class="table">
   <thead>
@@ -36,7 +35,6 @@
       <td>
         <div class="d-flex">
           <a href="{{route('View.invoice',$customer->id)}}" class="btn btn-primary">View</a>
-          <a class="btn btn-danger" href="">Delete</a>
         </div>
       </td>
     @endforeach

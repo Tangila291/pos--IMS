@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('receiver_email');
             $table->string('receiver_mobile');
             $table->string('receiver_address');
-            $table->string('status')->default('pending');
+            $table->string('status')->default('success');
             $table->string('payment_method');
             $table->string('payment_status')->default('pending');
             $table->string('trx_id')->nullable();

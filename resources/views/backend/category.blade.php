@@ -24,9 +24,9 @@
       <td>{{$cat->description}}</td>
       <td>{{$cat->status}}</td>
       <td>
-        <a class="btn btn-success" href="">View</a>
-        <a class="btn btn-info" href="">Edit</a>
-        <a class="btn btn-danger" href="">Delete</a>
+      <a href="{{route('Category.view',$cat->id)}}" class="btn btn-primary">View</a>
+      <a href="{{route('Category.edit',$cat->id)}}" class="btn btn-success">Edit</a>
+      <a href="{{route('Category.delete',$cat->id)}}" class="btn btn-danger">Delete</a>
       </td>
     @endforeach
   </tbody>

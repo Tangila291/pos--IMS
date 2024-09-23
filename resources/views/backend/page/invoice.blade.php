@@ -9,6 +9,9 @@
 
     <div class="card" id="printArea">
         <div class="card-header">
+        <div>
+           <h1 style='text-align:center'> POS & Inventory Management System</h1>
+        </div>
             Invoice
             <strong>{{$order->created_at}}</strong>
             <span class="float-right"> <strong>Status:</strong> {{$order->status}}</span>
@@ -19,12 +22,12 @@
                 <div class="col-sm-6">
                     <h6 class="mb-3">From:</h6>
                     <div>
-                        <strong>P&IMS</strong>
+                        <strong>POS&IMS</strong>
                     </div>
                     <div></div>
-                    <div>House 34,Road 2, Nikunja, Dhaka</div>
-                    <div>Email: pims@gmail.com</div>
-                    <div>Phone: +8801854969654</div>
+                    <div> Uttara, Dhaka</div>
+                    <div>Email: posims@gmail.com</div>
+                    <div>Phone: +8801777961955</div>
                 </div>
 
                 <div class="col-sm-6">

@@ -75,10 +75,9 @@ class ProductController extends Controller
         'category_id'=>$request->category_id,
         'brand_id'=>$request->brand_id
 
-
-
-
     ]);
+
+    notify()->success('product added');
     return redirect()->route('Product');
 
 }
@@ -98,8 +97,6 @@ class ProductController extends Controller
      {
         //Validation
 
-
-
         $product=Product::find($proid);
         $product->Update([
         'name'=>$request->product_name,
@@ -108,8 +105,8 @@ class ProductController extends Controller
         'quantity'=>$request->product_quantity
 
         ]);
-        notify()->success('Product updated successfully.');
 
+        notify()->success('Product updated successfully.');
 
         return redirect()->route('Product');
 

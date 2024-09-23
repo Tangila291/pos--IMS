@@ -28,5 +28,48 @@ class CategoryController extends Controller
         ]);
         return redirect()->back();
 
+
     }
+    public function viewcategory($id)
+     {
+        $category=Category::find($id);
+        return view('backend.page.category_view',compact('category'));
+     }
+     public function edit($catid)
+     {
+        $category=Category::find($catid);
+
+        return view('backend.page.category_edit',compact('category'));
+     }
+     public function Update(Request $request,$catid)
+     {
+        //Validation
+
+
+
+        $category=Category::find($catid);
+        $category->Update([
+        'name'=>$request->cat_name,
+        'description'=>$request->cat_description
+        
+
+        ]);
+
+        notify()->success('Category updated successfully.');
+
+        return redirect()->route('Category');
+
+
+
+     }
+     public function delete($id)
+     {
+        $category=Category::find($id);
+        $category->delete();
+
+        notify()->success('Product Deleted successfully.');
+
+        return redirect()->back();
+
+     }
 }

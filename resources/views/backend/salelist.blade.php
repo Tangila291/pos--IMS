@@ -2,7 +2,7 @@
 
 @section('content')
 <nav class="navbar navbar-light bg-light">
-  <form action="{{route('Search')}}" class="form-inline">
+  <form action="{{route('Search')}}" class="form-inline d-flex">
     <input name="search_key" value="{{request()->search_key}}" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
@@ -22,11 +22,16 @@
                     <!-- Product Card 1 -->
                     <div class="col-md-3">
                         <div class="card product-card">
-                            <img src="{{url('/uploads/'.$product->image)}}" class="card-img-top" alt="Product 1">
+                            <img style="height:110px;" src="{{url('/uploads/'.$product->image)}}" class="card-img-top" alt="Product 1">
                             <div class="card-body">
-                                <h5 class="card-title">{{$product->name}}</h5>
+                                <h6 class="card-title">{{substr($product->name,0,13)}}</h6>
                                 <p class="card-text">{{$product->price}} BDT</p>
+
+                                <p class="card-text">Stock: {{$product->quantity >0 ?  $product->quantity : 'out of stock'}} </p>
+                                @if($product->quantity>0)
                                 <a href="{{route('Add.to.cart',$product->id)}}" class="btn btn-primary">Add to Cart</a>
+                                @else
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -43,7 +48,7 @@
                 <div class="cart-summary">
 
                     <h4>Cart Summary</h4>
-                    
+                    <a class="btn btn-danger" href="{{route('Cart.clear')}}">Clear Cart</a>
                     <p><strong>Item :</strong>
                     @if(session()->has('basket'))
                     {{count(session()->get('basket'))}}item(s) 
@@ -87,10 +92,9 @@
                     @else
                     BDT @endif
                   </p>
-
-                  <form action="{{route('Place.order')}}"method="post">
-                    @csrf
-                  <div class="form-group">
+<form action="{{route('Place.order')}}"method="post">
+ @csrf
+    <div class="form-group">
     <label for="name">Enter Customer Name</label>
     <input name="receiver_name"type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Customer Name">
   </div>

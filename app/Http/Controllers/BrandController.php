@@ -29,4 +29,40 @@ class BrandController extends Controller
         return redirect()->back();
 
     }
+    public function edit($id)
+     {
+        $brand=Brand::find($id);
+
+        return view('backend.page.brand_edit',compact('brand'));
+     }
+     public function Update(Request $request,$id)
+     {
+
+
+
+        $brand=Brand::find($id);
+        $brand->Update([
+        'name'=>$request->brand_name,
+        'description'=>$request->brand_description
+        
+
+        ]);
+
+        notify()->success('Brand updated successfully.');
+
+        return redirect()->route('Brand');
+
+
+
+     }
+     public function delete($id)
+     {
+        $brand=Brand::find($id);
+        $brand->delete();
+
+        notify()->success('Deleted successfully.');
+
+        return redirect()->back();
+
+     }
 }

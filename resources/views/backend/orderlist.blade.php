@@ -32,11 +32,13 @@
       <td>
         <div class="d-flex">
           <a href="{{route('View.invoice',$order->id)}}" class="btn btn-primary">View</a>
-          <a class="btn btn-danger" href="">Delete</a>
+          <a href="{{route('Cancel.order',$order->id)}}" class="btn btn-danger">Cancel</a>
         </div>
       </td>
     @endforeach
   </tbody>
 </table>
+{{$allOrder->links()}}
+
 
 @endsection

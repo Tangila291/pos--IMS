@@ -1,7 +1,10 @@
-<header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Pos & Inventory Management System
-    <img style="width: 50px;" src="{{url('/logo.png')}}">
-  </a>
+<header style="z-index: -1;" class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+  <div class="d-flex">
+  
+  <img style="width: 50px;" src="{{url('/logo.png')}}">
+  <p class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white">{{$setting->name}}
+  </p>
+  </div>
 
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">

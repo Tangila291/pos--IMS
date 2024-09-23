@@ -9,6 +9,10 @@ use App\Http\Controllers\SaleController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\AdminuserController;
+use App\Http\Controllers\BusinessController;
+
+
 
 
 
@@ -34,6 +38,13 @@ Route::get('/logout',[AuthenticationController::class, 'logout'])->name('logout'
 Route::get('/Category',[CategoryController::class,'category'])->name('Category');
 Route::get('/Category-form',[CategoryController::class, 'form'])->name('Category.form');
 Route::post('/Category-store',[CategoryController::class, 'store'])->name('Category.store');
+Route::get('/Category/view/{cat_id}',[CategoryController::class,'viewcategory'])->name('Category.view');
+Route::get('/Category/edit/{cat_id}',[CategoryController::class,'edit'])->name('Category.edit'); 
+Route::post('/Category/update/{catid}',[CategoryController::class, 'update'])->name('Category.update');
+Route::get('/Category/delete/{cat_id}',[CategoryController::class,'delete'])->name('Category.delete');
+
+
+
 
 //Product
 Route::get('/Product',[ProductController::class,'product'])->name('Product');
@@ -49,6 +60,7 @@ Route::get('/Customer-list',[CustomerController::class,'list'])->name('Customer.
 Route::get('/Customer-form',[CustomerController::class,'form'])->name('Customer.form');
 Route::post('/Customer-store',[CustomerController::class,'store'])->name('Customer.store');
 
+
 //Sale
 Route::get('/Sale-list',[SaleController::class,'list'])->name('Sale.list');
 Route::get('/Show-product/{productId}',[SaleController::class,'showProduct'])->name('Show.product');
@@ -60,21 +72,33 @@ Route::post('/Place-order',[SaleController::class, 'placeOrder'])->name('Place.o
 Route::post('/Sale-view',[SaleController::class, 'saleview'])->name('Sale.view');
 Route::get('/View-invoice/{sale_id}',[SaleController::class,'viewInvoice'])->name('View.invoice');
 Route::get('/Order-list',[SaleController::class,'orderList'])->name('Order.list');
+Route::get('/order-cancel/{order_id}',[SaleController::class,'cancelOrder'])->name('Cancel.order');
+Route::post('/update-cart/{pid}',[SaleController::class,'updateCart'])->name('Update.cart');
+
+
 
 //Brand
 Route::get('/Brand',[BrandController::class,'brand'])->name('Brand');
 Route::get('/Brand-form',[BrandController::class,'form'])->name('Brand.form');
 Route::post('/Brand-store',[BrandController::class,'store'])->name('Brand.store');
+Route::get('/Brand/edit/{b_id}',[BrandController::class,'edit'])->name('Brand.edit');
+Route::post('/Brand/update/{b_id}',[BrandController::class, 'update'])->name('Brand.update');
+Route::get('/Brand/delete/{b_id}',[CategoryController::class,'delete'])->name('Brand.delete');
+
+
+
 
 //Reports
 Route::get('/Report',[SaleController::class,'report'])->name('Report');
 
 //Stock
 Route::get('/Stock',[StockController::class,'stock'])->name('Stock');
+Route::get('/Stock/delete/{s_id}',[StockController::class,'delete'])->name('Stock.delete');
 
 
 
 
+//Payment
 Route::get('/example1', [PaymentController::class, 'exampleEasyCheckout']);
 Route::get('/example2', [PaymentController::class, 'exampleHostedCheckout']);
 
@@ -87,7 +111,12 @@ Route::post('/cancel', [PaymentController::class, 'cancel']);
 
 Route::post('/ipn', [PaymentController::class, 'ipn']);
 
+//Admin-User
+Route::get('/Admin-user',[AdminuserController::class,'user'])->name('Admin.user');
 
+//Business-Settings
+Route::get('/business-settings',[BusinessController::class,'settings'])->name('Admin.business.settings');
+Route::post('/business-settings',[BusinessController::class,'settingSubmit'])->name('Settings.submit');
 
 
 

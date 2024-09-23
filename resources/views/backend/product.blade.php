@@ -13,7 +13,7 @@
       <th scope="col">Name</th>
       <th scope="col">Price</th>
       <th scope="col">Description</th>
-      <th scope="col">Quantity</th>
+      
       <th scope="col">Category Name</th>
       <th scope="col">Brand Name</th>
 
@@ -33,7 +33,7 @@
       <td>{{$product->name}}</td>
       <td>{{$product->price}} BDT</td>
       <td>{{$product->description}}</td>
-      <td>{{$product->quantity}}</td>
+      
       <td>{{$product->category->name}}</td>
       <td>{{$product->brand->name}}</td>
 

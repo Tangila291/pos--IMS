@@ -25,9 +25,9 @@
       <td>{{$brand->description}}</td>
       <td>{{$brand->status}}</td>
       <td>
-        <a class="btn btn-success" href="">View</a>
-        <a class="btn btn-info" href="">Edit</a>
-        <a class="btn btn-danger" href="">Delete</a>
+        <a href="{{route('Brand.edit',$brand->id)}}" class="btn btn-success">Edit</a>
+        <a href="{{route('Brand.delete',$brand->id)}}" class="btn btn-danger">Delete</a>
+
       </td>
     @endforeach
   </tbody>

@@ -15,6 +15,7 @@ class CustomerController extends Controller
         $allCustomer=Sale::paginate(5);
         return view('backend.customerlist',compact('allCustomer'));
     }
+    
     public function form()
     {
         return view('backend.customerform');
